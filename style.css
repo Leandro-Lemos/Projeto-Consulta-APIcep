@@ -21,7 +21,10 @@
     /* alinha em eixo x e y*/
     height: 300px;
 }
-
+.center {
+    display: flex;
+    justify-content: center;
+}
 .centered {
     align-items: center;
     margin: 0 auto !important;
@@ -277,3 +280,4 @@ a {
     }
 
 }
+
