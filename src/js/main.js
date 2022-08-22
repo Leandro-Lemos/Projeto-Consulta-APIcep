@@ -5,10 +5,38 @@ function copiarTexto() {
     textoCopiado.select();
     textoCopiado.setSelectionRange(0, 99999)
     document.execCommand("copy");
+    Mudacopy.muda()
+    Mudacopy.retorna()
+    
 
 }
 
 
+
+function retornacopy() {
+    setTimeout(function () {
+        let mudatexto = document.getElementById('copiatexto')
+
+        mudatexto.textContent = 'Copiar'
+    },3000);
+
+}
+
+const Mudacopy = {
+    muda() {
+        let mudatexto = document.getElementById('copiatexto')
+    
+            mudatexto.textContent = 'Copiado!'
+
+    },
+    retorna() {
+        setTimeout(function () {
+            let mudatexto = document.getElementById('copiatexto')
+    
+            mudatexto.textContent = 'Copiar'
+        },4000);
+    }
+}
 
 const cep = document.querySelector("#cep")
 
@@ -130,19 +158,19 @@ function limparCamposForm() {
 }
 
 const Modal = {
-    open(){
+    open() {
         //abrir modal
         //adicionar classe active
         document.querySelector('.modal-overlay')
-        .classList.add('active')
+            .classList.add('active')
     },
-    close(){
+    close() {
         //fechar modal
         //remover classe active do modal
         document.querySelector('.modal-overlay')
-        .classList.remove('active')
+            .classList.remove('active')
     }
-} 
+}
 
 function botaoDeletar() {
     let imgdelete = document.createElement('img')
@@ -151,13 +179,13 @@ function botaoDeletar() {
     imgdelete.width = 30
     imgdelete.height = 30
     imgdelete.setAttribute("onclick", "Modal.open()") //conferir
-    imgdelete.addEventListener("click", function(){
-        del= this.parentNode
-        console.log (del)
+    imgdelete.addEventListener("click", function () {
+        del = this.parentNode
+        console.log(del)
         delid = del.id
         console.log(delid)
-      
-    })     
+
+    })
     return imgdelete
 }
 
@@ -165,9 +193,14 @@ function confirmaDeletar() {
     del.remove()
     Modal.close()
     //remover item do array
-    arrayItens.splice(arrayItens.findIndex(elemento => elemento.cep === delid),1)
+    arrayItens.splice(arrayItens.findIndex(elemento => elemento.cep === delid), 1)
     //escrever alteração no localstorage
     localStorage.setItem("itens", JSON.stringify(arrayItens))
+}
+
+function excluilista() {
+    localStorage.clear()
+    location.reload()
 }
 
 
