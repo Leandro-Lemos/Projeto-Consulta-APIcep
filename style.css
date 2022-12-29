@@ -47,6 +47,7 @@
     border-radius: 5px;
 
 }
+
 .container {
     display: grid;
     grid-template-columns: 1fr;
@@ -82,8 +83,6 @@
     align-content: center;
     flex-direction: column-reverse;
     padding-left: 0px;
-
-
 }
 
 .itemLista {
@@ -96,9 +95,6 @@
     box-shadow: rgba(0, 0, 0, 0.60) 0px 3px 8px;
     border-radius: 5px;
     list-style-type: none;
-
-
-
 }
 
 .itemLi {
@@ -166,10 +162,6 @@ input:focus {
     padding: 7px 5px;
 
 }
-
-
-
-
 
 
 /* modal */

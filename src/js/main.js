@@ -1,4 +1,3 @@
-
 //copiar cep botão
 function copiarTexto() {
     let textoCopiado = document.getElementById("texto");
@@ -7,11 +6,7 @@ function copiarTexto() {
     document.execCommand("copy");
     Mudacopy.muda()
     Mudacopy.retorna()
-    
-
 }
-
-
 
 function retornacopy() {
     setTimeout(function () {
@@ -52,8 +47,6 @@ const showData = (result) => {
         }
     }
 }
-
-
 
 cep.addEventListener("blur", (e) => {
     let search = cep.value.replace("-", "")
